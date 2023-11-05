@@ -68,6 +68,14 @@ voice_assistant:
         green: 100%
         brightness: 100%
         effect: pulse
+  on_tts_end:
+    - homeassistant.service:
+        service: media_player.play_media
+        data:
+          entity_id: media_player.apartment_speakers
+          media_content_id: !lambda 'return x;'
+          media_content_type: music
+          announce: "true"
   on_end:
     - delay: 100ms
     - script.execute: reset_led
