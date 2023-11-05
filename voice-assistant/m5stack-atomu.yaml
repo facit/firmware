@@ -71,10 +71,11 @@ voice_assistant:
   on_tts_end:
     - homeassistant.service:
         service: media_player.play_media
-        data:
+        target:
           entity_id: media_player.apartment_speakers
+        data:
           media_content_id: !lambda 'return x;'
-          media_content_type: music
+          media_content_type: "music"
           announce: "true"
   on_end:
     - delay: 100ms
