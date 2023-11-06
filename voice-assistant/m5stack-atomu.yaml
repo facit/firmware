@@ -72,8 +72,9 @@ voice_assistant:
     - homeassistant.service:
         service: media_player.play_media
         target:
-          entity_id: media_player.apartment_speakers
+          entity_id: media_player.bedroom_speaker
         data:
+          cache: true
           media_content_id: !lambda 'return x;'
           media_content_type: "music"
           announce: "true"
