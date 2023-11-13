@@ -74,7 +74,6 @@ voice_assistant:
         data:
           media_content_id: !lambda 'return x;'
           media_content_type: music
-        target:
           entity_id: media_player.bedroom_speaker
   on_end:
     - delay: 100ms
