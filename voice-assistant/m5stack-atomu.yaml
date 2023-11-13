@@ -73,7 +73,7 @@ voice_assistant:
         service: media_player.play_media
         data:
           media_content_id: !lambda 'return x;'
-          media_content_type: music
+          media_content_type: hls
           entity_id: media_player.bedroom_speaker
   on_end:
     - delay: 100ms
