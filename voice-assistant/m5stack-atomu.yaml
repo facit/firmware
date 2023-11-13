@@ -71,13 +71,11 @@ voice_assistant:
   on_tts_end:
     - homeassistant.service:
         service: media_player.play_media
+        data:
+          media_content_id: !lambda 'return x;'
+          media_content_type: music
         target:
           entity_id: media_player.bedroom_speaker
-        data:
-          cache: "true"
-          media_content_id: !lambda 'return x;'
-          media_content_type: "music"
-          announce: "true"
   on_end:
     - delay: 100ms
     - script.execute: reset_led
